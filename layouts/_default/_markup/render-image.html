@@ -1,0 +1,20 @@
+{{- /* 图片渲染钩子 - 为所有相对路径图片添加文章目录前缀 */ -}}
+
+{{- $fileDir := replace (.Page.File.Dir | default "") "\\" "/" -}}
+{{- $articleDir := strings.TrimSuffix "/" (strings.TrimPrefix "content/" $fileDir) }}
+{{- $src := .Destination -}}
+
+{{- if not (or (hasPrefix $src "http://") (hasPrefix $src "https://") (hasPrefix $src "/")) -}}
+  {{- if eq $articleDir "" -}}
+    {{- $src = printf "/%s" $src -}}
+  {{- else -}}
+    {{- $src = printf "/%s/%s" $articleDir $src -}}
+  {{- end -}}
+{{- end -}}
+
+<img 
+  src="{{ $src }}" 
+  alt="{{ .Text | safeHTML }}" 
+  {{ with .Title }}title="{{ . | safeHTML }}"{{ end }} 
+  loading="lazy"
+>
