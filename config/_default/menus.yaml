@@ -62,3 +62,13 @@ main:
     pageRef: /404.html
     pre: heartbeat
     weight: 6
+  - identifier: test-image-page-2
+    name: 图片测试2
+    pageRef: /test-image-page-2/
+    pre: heartbeat
+    weight: 7
+  - identifier: test-image-path-1
+    name: 图片测试1
+    pageRef: /test-image-path-1/
+    pre: heartbeat
+    weight: 8
