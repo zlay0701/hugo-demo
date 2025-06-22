@@ -20,4 +20,6 @@ EOT
 
 next_boot `cat themes/hugo-theme-next/VERSION`
 
+rm -rf public/
+
 hugo server --port 1414
