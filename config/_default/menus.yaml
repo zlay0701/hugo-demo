@@ -18,9 +18,14 @@
 # weight     : Order number and smaller is top
 # -------------------------------------
 main:
+  - identifier: navigation
+    name: 导航
+    pageRef: /
+    pre: fas fa-rocket
+    weight: 1
   - identifier: home
     name: 首页
-    pageRef: /
+    pageRef: /home
     pre: home
     weight: 1
   - identifier: about
