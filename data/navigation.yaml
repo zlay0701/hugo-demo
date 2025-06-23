@@ -1,0 +1,30 @@
+# 友情链接
+# Friend's links
+
+- FLinksTitle: 博客
+  FLinksDesc: 这是我的博客。
+  FLinksList:
+    - name: 博客首页
+      desc: 你必须很努力,才能看起来毫不费力
+      avatar: https://gohugo.io/favicon-32x32.png
+      link: /home
+      timeout: 2
+      visible: true
+
+    - name: Hexo Next Demo
+      desc: Hexo + Next主题演示站点
+      avatar: https://hugo-next.eu.org/imgs/hugo_next_avatar.png
+      link: https://hexo-demo.zlay.fun/
+      timeout: 2
+      visible: true
+
+    
+- FLinksTitle: 工具
+  FLinksDesc: 这是我的工具
+  FLinksList:
+    - name: hugo Next Demo
+      desc: Hugo + NexT主题演示站点
+      avatar: https://a.happy2008.top/imgs/stayhome-small.png
+      link: https://hugo.zlay.fun/
+      timeout: 2
+      visible: true
