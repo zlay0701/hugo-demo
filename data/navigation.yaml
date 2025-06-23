@@ -25,6 +25,6 @@
     - name: hugo Next Demo
       desc: Hugo + NexT主题演示站点
       avatar: https://a.happy2008.top/imgs/stayhome-small.png
-      link: https://hugo.zlay.fun/
+      link: https://hugo-demo.zlay.fun/
       timeout: 2
       visible: true
