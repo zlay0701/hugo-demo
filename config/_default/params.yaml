@@ -1021,7 +1021,7 @@ canvasRibbon:
 vendors:
     # The CDN provider of NexT internal scripts.
     # Available values: local | cdn
-    internal: local
+    internal: cdn
     # The default CDN provider of third-party plugins.
     # Available values: local | cdnjs | unpkg | jsdelivr | staticfile | bootcdn | 7ed | zstatic | zeyao | custom
-    plugins: local
+    plugins: unpkg

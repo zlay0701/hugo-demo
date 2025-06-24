@@ -6,14 +6,14 @@
   FLinksList:
     - name: 博客首页
       desc: 你必须很努力,才能看起来毫不费力
-      avatar: https://gohugo.io/favicon-32x32.png
+      avatar: /imgs/hugo_next_avatar.png
       link: /home
       timeout: 2
       visible: true
 
     - name: Hexo Next Demo
       desc: Hexo + Next主题演示站点
-      avatar: https://hugo-next.eu.org/imgs/hugo_next_avatar.png
+      avatar: /imgs/hugo_next_avatar.png
       link: https://hexo-demo.zlay.fun/
       timeout: 2
       visible: true
@@ -24,7 +24,7 @@
   FLinksList:
     - name: hugo Next Demo
       desc: Hugo + NexT主题演示站点
-      avatar: https://a.happy2008.top/imgs/stayhome-small.png
+      avatar: /imgs/hugo_next_avatar.png
       link: https://hugo-demo.zlay.fun/
       timeout: 2
       visible: true
