@@ -3,7 +3,26 @@
 {{ define "main_inner_class" }}flinks posts-expand{{ end }}
 
 {{ define "main" }}
-
+<style>
+	@media (max-width: 767px) {
+		.flinks-list-items {
+		  display: grid;
+		  grid-template-columns: repeat(1, minmax(330px, 1fr));
+		}
+		.flinks-block .flinks-list-items .flinks-list-item{
+			width: 100%;
+			display: block;
+			justify-content: center;
+			align-items: center;
+		}
+		.flinks-block .flinks-list-items .flinks-list-item .flinks-item-name {
+			display: block;
+		}
+		.flinks-block .flinks-list-items .flinks-list-item .flinks-item-desc {
+			display: block;
+		}
+	}
+  </style>
 <div class="flinks-block">
 <h1 class="flinks-header">{{ .Title }}</h1>
 <div class="flinks-body">
