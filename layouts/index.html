@@ -10,10 +10,11 @@
 		  grid-template-columns: repeat(1, minmax(330px, 1fr));
 		}
 		.flinks-block .flinks-list-items .flinks-list-item{
-			width: 100%;
+			width: 95%;
 			display: block;
 			justify-content: center;
 			align-items: center;
+			margin: 15px 0px;
 		}
 		.flinks-block .flinks-list-items .flinks-list-item .flinks-item-name {
 			display: block;
@@ -21,7 +22,17 @@
 		.flinks-block .flinks-list-items .flinks-list-item .flinks-item-desc {
 			display: block;
 		}
-	}
+		.flinks-block .flinks-list-items {
+			overflow: auto;
+			padding: 10px 10px 0;
+			text-align: left;
+		}
+		.flinks-block .flinks-list-items .flinks-list-item:hover .flinks-item-name {
+		  text-align: center;
+		}
+		.flinks-block .flinks-list-items .flinks-list-item:hover .flinks-item-desc {
+		  text-align: center;
+		}
 </style>
 <div class="flinks-block">
 <h1 class="flinks-header">{{ .Title }}</h1>
