@@ -29,9 +29,9 @@
 <div class="flinks-lists">
   {{ $flinksData := "" }}
   {{ if .IsTranslated }}
-    {{ $flinksData = index .Site.Data.navigation .Lang }}
+    {{ $flinksData = index .Site.Data.flinks .Lang }}
   {{ else }}
-    {{ $flinksData = .Site.Data.navigation }}
+    {{ $flinksData = .Site.Data.flinks }}
   {{ end }}
   {{ range $flinksData }}
   <div class="flinks-list">
