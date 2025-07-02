@@ -14,4 +14,4 @@ tags:
 
 {{ .Name }}
 
-<!--more-->
+<!-- more -->
