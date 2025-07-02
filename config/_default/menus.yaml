@@ -77,3 +77,13 @@ main:
     pageRef: /test-image-path-1/
     pre: heartbeat
     weight: 8
+  - identifier: friends
+    name: 新版友链
+    pageRef: /friends/
+    pre: fa fa-link
+    weight: 9
+  - identifier: portfolio
+    name: 作品集
+    pageRef: /portfolio/
+    pre: fa fa-file-code
+    weight: 10
