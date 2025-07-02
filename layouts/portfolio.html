@@ -1,0 +1,126 @@
+{{ define "title" }}{{ .Title }} - {{ .Site.Title }}{{ end }}
+
+{{ define "main_inner_class" }}flinks posts-expand{{ end }}
+
+{{ define "main" }}
+<style>
+	.flinks-list-items {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(330px, 1fr));
+	}
+	.flinks-block .flinks-list-items .flinks-list-item{
+			width: 91%;
+			height: auto;
+			/* display: block; */
+			/* justify-content: center; */
+			/* align-items: center; */
+			/* margin: 15px 0px; */
+	}
+	.flinks-block .flinks-list-items {
+		text-align: left;
+	}
+	.flinks-block .flinks-list-items .flinks-list-item:hover .flinks-item-name {
+		text-align: center;
+	}
+	.flinks-block .flinks-list-items .flinks-list-item:hover .flinks-item-desc {
+		text-align: center;
+	}
+	@media (max-width: 767px) {
+		.flinks-list-items {
+		  display: grid;
+		  grid-template-columns: repeat(1, minmax(330px, 1fr));
+		}
+		.flinks-block .flinks-list-items .flinks-list-item{
+			width: 95%;
+			display: block;
+			justify-content: center;
+			align-items: center;
+			margin: 15px 0px;
+		}
+		.flinks-block .flinks-list-items .flinks-list-item .flinks-item-name {
+			display: block;
+		}
+		.flinks-block .flinks-list-items .flinks-list-item .flinks-item-desc {
+			display: block;
+		}
+		.flinks-block .flinks-list-items {
+			overflow: auto;
+			padding: 10px 10px 0;
+			text-align: left;
+		}
+		.flinks-block .flinks-list-items .flinks-list-item:hover .flinks-item-name {
+		  text-align: center;
+		}
+		.flinks-block .flinks-list-items .flinks-list-item:hover .flinks-item-desc {
+		  text-align: center;
+		}
+	}
+</style>
+<div class="flinks-block">
+<h1 class="flinks-header">{{ .Title }}</h1>
+<div class="flinks-body">
+<div class="flinks-lists">
+  {{ $flinksData := "" }}
+  {{ if .IsTranslated }}
+    {{ $flinksData = index .Site.Data.portfolio .Lang }}
+  {{ else }}
+    {{ $flinksData = .Site.Data.portfolio }}
+  {{ end }}
+
+	<!-- 总览 start -->
+	{{ if $flinksData.visible }}
+	<!-- list start -->
+	<div class="flinks-list">
+		<div class="flinks-list-title">{{ $flinksData.FLinksTitle }} </div>
+		<div class="flinks-list-desc">{{ $flinksData.FLinksDesc }}</div>
+		<div class="flinks-list-items" style="display: flex;flex-direction: column;align-items: center;">
+			<div class="flinks-list-item" style="height: auto;width: auto;">
+				<a target="_blank" rel="noopener" href="{{ $flinksData.link }}">
+					<img align="center" src="{{ $flinksData.serverUrl }}{{ $flinksData.statsLink }}&bg_color={{ $flinksData.bgColor }}" alt="{{ $flinksData.FLinksTitle }}" style="margin-bottom:0px">
+				</a>
+			</div>
+		</div>
+	</div>
+	<!-- list end -->
+	{{ end }}
+	<!-- 总览 end -->
+
+  {{ range $flinksData.githubList }}
+  {{ if .visible }}
+  <div class="flinks-list">
+    <div class="flinks-list-title">{{ .title | safeHTML }}</div>
+    <div class="flinks-list-desc">{{ .desc | safeHTML }}</div>
+    <div class="flinks-list-items">
+    {{ range .repoList }}
+    {{ if .visible }}
+	{{ if and .repo (ne .repo "") }}
+	<div class="card">
+		<div class="flinks-list-item">
+			<a target="_blank" rel="noopener" class="img1_card" href="https://github.com/{{.username}}/{{.repo}}">
+				<img align="center" src=" {{ $flinksData.serverUrl }}/api/pin/?username={{.username}}&repo={{.repo}}&show_owner={{ $flinksData.showOwner }}&bg_color={{ $flinksData.bgColor }}" alt="{{.name}}">
+			</a>
+		</div>
+	</div>
+	{{ else }}
+    <div class="flinks-list-item">
+      <a href="{{ .link }}" rel="external nofollow noreferrer" title=" {{ .name }}" target="_blank">
+        <div class="flinks-item-icon">
+          <img class="no-lightbox entered loaded" src="{{ .avatar }}" alt="{{ .name }}"/>
+        </div>
+        <div class="flinks-item-name">{{ .name  | safeHTML }}</div>
+        <div class="flinks-item-desc" title="{{ .desc }}">{{ .desc | safeHTML }}</div>
+      </a>
+    </div>
+	{{ end }}
+    {{ end }}
+    {{ end }}
+  </div>
+  </div>
+  {{ end }}
+  {{ end }}
+</div>
+<div class="flinks-list-footer"><hr/></div>
+<div class="flinks-page-desc">{{ .Content }}</div>
+</div>
+</div>
+{{ end }}

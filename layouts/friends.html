@@ -50,9 +50,9 @@
 <div class="flinks-lists">
   {{ $flinksData := "" }}
   {{ if .IsTranslated }}
-    {{ $flinksData = index .Site.Data.navigation .Lang }}
+    {{ $flinksData = index .Site.Data.friends .Lang }}
   {{ else }}
-    {{ $flinksData = .Site.Data.navigation }}
+    {{ $flinksData = .Site.Data.friends }}
   {{ end }}
   {{ range $flinksData }}
   {{ if .visible }}
