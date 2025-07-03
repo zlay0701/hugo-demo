@@ -21,8 +21,7 @@ if exist "public" (
 
 rem 启动 Hugo 服务器
 echo 正在启动 Hugo 服务器（端口 1414）...
-hugo server --port 1414
-
+hugo server --bind=0.0.0.0 --baseURL=http://%COMPUTERNAME% --port 1414
 :end
 echo 脚本执行完成。按任意键退出...
 pause >nul

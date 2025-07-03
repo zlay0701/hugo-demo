@@ -22,4 +22,4 @@ next_boot `cat themes/hugo-theme-next/VERSION`
 
 rm -rf public/
 
-hugo server --port 1414
+hugo server --bind=0.0.0.0 --baseURL=http://$(hostname) --port 1414
