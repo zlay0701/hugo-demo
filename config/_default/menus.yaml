@@ -20,12 +20,12 @@
 main:
   - identifier: navigation
     name: 导航
-    pageRef: /
+    pageRef: /navigation
     pre: fas fa-rocket
     weight: 1
   - identifier: home
     name: 首页
-    pageRef: /home
+    pageRef: /
     pre: home
     weight: 1
   - identifier: about

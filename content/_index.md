@@ -1,5 +1,5 @@
 ---
-title: "导航"
-layout: "index"
+title: "首页"
+layout: "home_page"
 ---
 
