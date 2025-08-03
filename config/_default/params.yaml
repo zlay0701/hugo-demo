@@ -802,7 +802,7 @@ giscus:
   # Aavilable value: top | bottom
   # 讨论区帖子标题，可选值： pathname | url | title | og:title | 自定义
   # Available values: pathname | url | title | og:title | custom
-  mapping: title
+  mapping: pathname
   # 评论输入框的位置，可选值： top | bottom
   # Aavilable value: top | bottom
   inputPosition: top
